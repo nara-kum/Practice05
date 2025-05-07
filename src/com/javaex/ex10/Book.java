@@ -5,12 +5,14 @@ public class Book {
 	private int bookNo;
 	private String title;
 	private String author;
-	static private int stateCode;
+	private int stateCode;
 	
 	//생성자
-	public Book() {}
-	public Book(int bookNo, String title, String author, int stateCode) {
-		super();
+	public Book() {
+		this.stateCode = 1;
+	}
+	
+	public Book(int bookNo, String title, String author) {
 		this.bookNo = bookNo;
 		this.title = title;
 		this.author = author;
@@ -48,6 +50,8 @@ public class Book {
     
     public void print() {
     	
+    	System.out.print(bookNo+" 책 제목:"+title+", 작가:"+author+", 대여 유무:");
+    	
     	if(stateCode==1) {
     		System.out.println("재고있음");
     	}else {
@@ -55,7 +59,5 @@ public class Book {
     	}
     	
     }
-    
-    
-    
+        
 }
